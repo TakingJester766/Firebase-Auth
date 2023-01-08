@@ -2,9 +2,16 @@ import React from 'react';
 import Signin from './components/Signin';
 import Signup from './components/Signup';
 import Account from './components/Account';
+import Home from './components/Home';
+import Header from './components/Header';
 import { Route, Routes } from 'react-router-dom';
 import { AuthContextProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
+
+//<Route path='/' element={<Signin />}/>
+
+
+
 
 function App() {
   return (
@@ -14,7 +21,7 @@ function App() {
       </h1>
       <AuthContextProvider>
         <Routes>
-          <Route path='/' element={<Signin />}/>
+          <Route path='/' element={<Home />}/>
           <Route path='/signup' element={<Signup />}/>
           <Route path='/account' element={<ProtectedRoute><Account /></ProtectedRoute>}/>
         </Routes>
